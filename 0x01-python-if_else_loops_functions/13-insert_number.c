@@ -15,7 +15,7 @@ listint_t *insert_node(listint_t **head, int number)
 	listint_t *temp, *new_node, *iterator = *head;
 
 	if (!head)
-		return (add_nodeint_end(&head, number));
+		return (add_nodeint_end(head, number));
 
 	if (*head == NULL)
 		return (NULL);
