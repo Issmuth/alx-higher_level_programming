@@ -11,9 +11,9 @@
  * node of reversed list
  */
 
-void reverse_list(listint_t *head)
+void reverse_list(listint_t **head)
 {
-	listint_t *iterator = head, *next = NULL, *prev = NULL;
+	listint_t *iterator = *head, *next = NULL, *prev = NULL;
 
 	while (iterator)
 	{
@@ -22,7 +22,7 @@ void reverse_list(listint_t *head)
 		prev = iterator;
 		iterator = next;
 	}
-	head = prev;
+	*head = prev;
 }
 
 /**
@@ -73,22 +73,40 @@ listint_t *dup_list(listint_t *head)
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *dup_head;
+	listint_t *last = NULL, *once = *head,
+		  *twice = *head, *temp = *head;
 
 	if (!(*head) || !(*head)->next)
 		return (1);
 
-	dup_head = dup_list(*head);
-	reverse_list(*head);
-	while (dup_head && *head)
+	while (1)
 	{
-		if (dup_head->n == (*head)->n)
+		twice = twice->next->next;
+		if (!twice)
 		{
-			dup_head = dup_head->next;
-			*head = (*head)->next;
+			last = once->next;
+			break;
+		}
+		if (!twice->next)
+		{
+			last = once->next->next;
+			break;
+		}
+		once = once->next;
+	}
+	reverse_list(&last);
+
+	while (last && temp)
+	{
+		if (last->n == temp->n)
+		{
+			last = last->next;
+			temp = temp->next;
 		} else
 			return (0);
 	}
+	if (!last)
+		return (1);
 
-	return (1);
+	return (0);
 }
