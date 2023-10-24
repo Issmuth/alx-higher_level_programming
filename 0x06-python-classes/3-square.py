@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # 3-square.py by Ismael
 """Square Object Definition."""
 

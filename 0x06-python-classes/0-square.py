@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 # 0-square.py by Ismael
-""" Square Definition """
+"""Square Definition."""
 
 
 class Square:
-    """ Does nothing"""
+    """Does nothing."""
+
     pass
