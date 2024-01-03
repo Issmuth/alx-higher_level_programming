@@ -1,0 +1,53 @@
+=====================
+add_integer module
+=====================
+
+This module shows how the add_integer function can be utilized.
+
+Import the module first
+>>> add_integer = __import__("0-add_integer").add_integer
+
+it returns the sum of two integers 
+    >>> add_integer(2, 4)
+    6
+
+    >>> add_integer(-1, 4)
+    3
+
+can accept floating point numbers as argument but are casted to integers before use
+
+    >>> add_integers(3.0, 4.0)
+    7
+
+    >>> add_integer(2.4, 5.1)
+    7
+
+    >>> add_integers(-2.7, 10.5)
+    8
+
+can use a mix of both floating points and integers in one call
+
+    >>> add_integers(3.1, 4)
+    7
+
+second argument can be neglected when calling as it's 98 by default
+
+    >>> add_integers(-91)
+    7
+
+the function requires that both arguments provided are either floats or integers.
+otherwise TypeError is raised.
+
+    >>> add_integers(2 + 3j, 5)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integers(5.4, "python")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+the function requires at least one argument otherwise it raises TypeError
+    >>> add_integer()
+    Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+    TypeError: add_integer() missing 1 required positional argument: 'a'
