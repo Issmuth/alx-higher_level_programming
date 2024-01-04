@@ -94,4 +94,4 @@ class Rectangle:
 
         Returns: the perimeter of the rectangle
         """
-        return ((self.__width) + (self.__height))
+        return ((self.__width * 2) + (self.__height * 2))
