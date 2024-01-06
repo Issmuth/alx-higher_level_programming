@@ -117,4 +117,9 @@ class Rectangle:
 
         Returns: the string represntation of the rectangle
         """
-        return "Rectangle(" + str(self.width) + ", " + str(self.height) + ")" 
+        return "Rectangle(" + str(self.width) + ", " + str(self.height) + ")"
+
+    def __del__(self):
+        """Prints 'Bye rectangle' when a rectangle object is deleted
+        """
+        print("Bye rectangle...")
