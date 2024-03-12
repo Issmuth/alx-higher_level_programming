@@ -1,4 +1,10 @@
 #!/usr/bin/node
-process.argv.forEach(function (element) {
-  console.log(element);
-});
+if (!process.argv[2]) {
+  console.log('No argument');
+} else {
+  process.argv.forEach(function (element, index) {
+    if (index > 1) {
+      console.log(element);
+    }
+  });
+}
