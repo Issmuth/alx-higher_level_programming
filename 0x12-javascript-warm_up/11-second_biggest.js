@@ -1,5 +1,5 @@
 #!/usr/bin/node
-let args = process.argv;
+const args = process.argv;
 let max = args[0];
 let max2 = args[0];
 if (!args[3]) {
