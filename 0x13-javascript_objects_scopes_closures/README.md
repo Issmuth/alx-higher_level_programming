@@ -1,1 +1,1 @@
-Classes & objects in JavaScript
+Classes & objects in JavaScript;
