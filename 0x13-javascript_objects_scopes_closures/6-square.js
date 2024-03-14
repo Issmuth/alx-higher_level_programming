@@ -1,10 +1,6 @@
 #!/usr/bin/node
 const Sq = require('./5-square');
 module.exports = class Square extends Sq {
-  constructor (size) {
-	  super(size);
-  }
-
   charPrint (c) {
     let ch = c;
     if (!ch) {
