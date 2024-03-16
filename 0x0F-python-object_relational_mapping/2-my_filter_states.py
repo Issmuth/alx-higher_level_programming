@@ -9,7 +9,7 @@ if __name__ == "__main__":
     password = sys.argv[2]
     database = sys.argv[3]
     name = sys.argv[4]
-    query = "SELECT * FROM states WHERE name LIKE'{}%' \
+    query = "SELECT * FROM states WHERE name LIKE '{}%' \
              ORDER BY states.id ASC".format(name)
 
     db = MySQLdb.connect(host="localhost", user=user, passwd=password,
