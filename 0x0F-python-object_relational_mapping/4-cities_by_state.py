@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""Script that lists all states from the
-   database hbtn_0e_0_usa."""
+"""Script that prints all cities in a state"""
 import MySQLdb
 import sys
 
@@ -8,15 +7,18 @@ if __name__ == "__main__":
     user = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
-    query = "SELECT * FROM states WHERE name LIKE '{}%' \
-             ORDER BY states.id ASC".format(sys.argv[4])
+
+    query = "SELECT cities.id, cities.name, states.name\
+             FROM cities\
+             INNER JOIN states\
+             ON states.id = cities.state_id ORDER BY cities.id ASC"
 
     db = MySQLdb.connect(host="localhost", user=user, passwd=password,
                          db=database, port=3306)
+
     cr = db.cursor()
     cr.execute(query)
     records = cr.fetchall()
-
     for row in records:
         print(row)
 
