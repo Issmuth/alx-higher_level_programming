@@ -9,10 +9,10 @@ if __name__ == "__main__":
     database = sys.argv[3]
     state = sys.argv[4]
 
-    query = "SELECT cities.name\
+    query = """SELECT cities.name\
              FROM cities\
              INNER JOIN states ON states.id = cities.state_id\
-             WHERE states.name=%s"
+             WHERE states.name=%s"""
 
     db = MySQLdb.connect(host="localhost", user=user, passwd=password,
                          db=database, port=3306)
