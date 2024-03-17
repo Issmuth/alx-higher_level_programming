@@ -16,7 +16,9 @@ if __name__ == "__main__":
     states = session.query(State).\
         order_by(State.id.asc()).filter(State.name.like(sys.argv[4]))
 
-    for state in states:
-        print(state.id)
+    if states is None:
+        print('Not found')
+    else:
+        print(states[0].id)
 
     session.close()
