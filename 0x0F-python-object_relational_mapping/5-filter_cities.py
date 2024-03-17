@@ -9,9 +9,9 @@ if __name__ == "__main__":
     database = sys.argv[3]
     state = sys.argv[4]
 
-    query = """SELECT cities.name\
-             FROM cities\
-             INNER JOIN states ON states.id = cities.state_id\
+    query = """SELECT cities.name
+             FROM cities
+             INNER JOIN states ON states.id = cities.state_id
              WHERE states.name=%s"""
 
     db = MySQLdb.connect(host="localhost", user=user, passwd=password,
@@ -20,12 +20,8 @@ if __name__ == "__main__":
     cr = db.cursor()
     cr.execute(query, (state,))
     records = cr.fetchall()
-    for i in range(len(records)):
-        print(records[i][0].strip('()').strip('\'"'), end="")
-        if i + 1 != len(records):
-            print('', end=", ")
-        else:
-            print()
+    pr = list(row[0] for row in records)
+    print(*pr, sep=", ")
 
     cr.close()
     db.close()
