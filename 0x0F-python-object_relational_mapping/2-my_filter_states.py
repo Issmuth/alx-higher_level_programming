@@ -8,7 +8,7 @@ if __name__ == "__main__":
     user = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
-    query = "SELECT * FROM states WHERE name LIKE '{}%' \
+    query = "SELECT * FROM states WHERE name LIKE BINARY '{}%' \
              ORDER BY states.id ASC".format(sys.argv[4])
 
     db = MySQLdb.connect(host="localhost", user=user, passwd=password,
