@@ -11,7 +11,7 @@ if __name__ == "__main__":
     response = requests.post('http://0.0.0.0:5000/search_user', data=data)
     try:
         rjson = response.json()
-        if not rjson:
+        if rjson == {}:
             print('No result')
         else:
             print('[{}] {}'.format(rjson['id'], rjson['name']))
