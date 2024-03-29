@@ -9,5 +9,5 @@ with urlopen('https://alx-intranet.hbtn.io/status') as s:
     response['content'] = s.read()
     response['utf8 content'] = response['content'].decode('utf-8')
     print('Body response:')
-    for k,v in response.items():
+    for k, v in response.items():
         print("    - {}: {}".format(k, v))
