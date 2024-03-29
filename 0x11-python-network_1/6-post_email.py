@@ -6,4 +6,4 @@ import sys
 if __name__ == "__main__":
     data = {'email': sys.argv[2]}
     response = request.post(sys.argv[1], data=data)
-    print(response.content)
+    print(response.read().decode('utf-8'))
