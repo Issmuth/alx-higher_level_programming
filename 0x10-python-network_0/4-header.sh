@@ -1,3 +1,4 @@
 #!/bin/bash
-# display body of response
-curl -sH "X-HolbertonSchool-User-Id: 98" "{$1}"
+# sends a get message allong with a header
+
+curl -H "X-School-User-Id: 98" $1

@@ -1,3 +1,4 @@
 #!/bin/bash
-# sends a delete method and prints response body
-curl -sX DELETE "$1"
+# sends a delete request
+
+curl -i -X DELETE $1
